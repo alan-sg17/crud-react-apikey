@@ -12,9 +12,12 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.10.0",
+    "dotenv": "^17.2.1",
+    "openai": "^5.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3",
+    "swal": "^0.1.0",
     "sweetalert2": "^11.22.2",
     "tailwindcss": "^4.1.11"
   },

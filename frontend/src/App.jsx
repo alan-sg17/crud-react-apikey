@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import BotonPrimario from './components/BotonPrimario';
 import Navegacion from './components/Navegacion';
-import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import './App.css';
 
@@ -27,6 +26,15 @@ function App() {
         setShowTaskForm(false);
     };
 
+    useEffect(() => {
+        const runTest = async () => {
+            console.log('🚀 Iniciando app...');
+            // Aquí antes estaba testChatCompletion, ya no es necesario
+        };
+
+        runTest();
+    }, []);
+
     return (
         <div className='min-h-screen flex flex-col items-center bg-gray-100 p-4'>
             <nav className="bg-blue-800 p-4 shadow-md w-full">
@@ -46,7 +54,9 @@ function App() {
                     <Route path="/" element={
                         <>
                             <h1 className='text-5xl font-extrabold text-blue-700 mb-8'>Gestor de Tareas</h1>
-                            <p className='mt-12 text-gray-600'>Bienvenido al sistema de gestión de tareas. Organiza y realiza un seguimiento de tus actividades.</p>
+                            <p className='mt-12 text-gray-600'>
+                                Bienvenido al sistema de gestión de tareas. Organiza y realiza un seguimiento de tus actividades.
+                            </p>
                         </>
                     } />
                     
@@ -68,14 +78,9 @@ function App() {
                                     onCancel={handleCancelEdit}
                                 />
                             )}
-                            <TaskList
-                                onEditTask={handleEditTask}
-                                onTaskCreatedOrUpdated={taskActionTrigger}
-                            />
                         </>
                     } />
                 
-                    
                     <Route path="*" element={
                         <h2 className='text-4xl font-bold text-gray-800 mt-12 mb-8 text-red-500'>
                             404 - Página no encontrada
