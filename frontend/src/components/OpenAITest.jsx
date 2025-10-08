@@ -20,7 +20,7 @@ function OpenAITest() {
       setIsTesting(false);
     }
   };
-
+// sos
   return (
     <div style={{ padding: '20px', border: '1px solid #ccc', margin: '20px' }}>
       <h3>Prueba de conexión OpenAI</h3>
